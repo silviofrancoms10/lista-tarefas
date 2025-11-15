@@ -1,4 +1,4 @@
-.main{
+.main {
   background-color: #fff;
   padding: 30px;
   margin: 50px auto;
@@ -7,19 +7,19 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.main h1{
+.main h1 {
   font-size: 20px;
   text-align: center;
 }
 
-.form{
+.form {
   margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.form input[type="text"]{
+.form input[type="text"] {
   height: 40px;
   padding: 0 20px;
   font-size: 20px;
@@ -27,7 +27,7 @@
   min-width: 80%;
 }
 
-.form button[type="submit"]{
+.form button[type="submit"] {
   border: none;
   height: 40px;
   width: 40px;
@@ -36,4 +36,48 @@
   display: flex;
   align-items: center;
   justify-content: center
+}
+
+.tarefas {
+  margin-top: 30px;
+}
+
+.tarefas li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  transition: all 0.4s;
+}
+
+.tarefas li:hover {
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+.tarefas li .edit {
+  margin-right: 15px;
+  color: rgba(0, 60, 180, 0.8);
+}
+
+.tarefas li .delete {
+  margin-right: 15px;
+  color: rgba(255, 0, 0, 0.6);
+}
+
+.tarefas li:hover .edit {
+  color: rgba(0, 60, 180, 1);
+  transition: all 0.4s;
+
+}
+
+.tarefas li:hover .delete {
+  color: rgba(255, 0, 0, 0.8);
+  transition: all 0.4s;
+
+}
+
+.tarefas li .edit,
+.tarefas li .delete {
+  cursor: pointer;
 }
