@@ -16,7 +16,7 @@ export default class Main extends Component {
     let { novaTarefa } = this.state;
     novaTarefa = novaTarefa.trim();
 
-    if(tarefas.indexOf(novaTarefa) !== -1) return;
+    if (tarefas.indexOf(novaTarefa) !== -1) return;
 
     const novasTarefas = [...tarefas];
     this.setState({
@@ -25,6 +25,19 @@ export default class Main extends Component {
   }
 
   handleChange = (e) => this.setState({ novaTarefa: e.target.value, })
+
+  handleEdit = (e, index) => {
+    console.log('Edit', index)
+  }
+
+  handleDelete = (e, index) => {
+    const { tarefas } = this.state;
+    const novasTarefas = [...tarefas];
+    novasTarefas.splice(index, 1);
+    this.setState({
+      tarefas: [...novasTarefas],
+    });
+  }
 
 
   render() {
@@ -46,8 +59,8 @@ export default class Main extends Component {
             <li key={index}>
               {tarefa}
               <span>
-                <FaEdit className="edit" />
-                <FaWindowClose className="delete" />
+                <FaEdit onClick={(e) => this.handleEdit(e, index)} className="edit" />
+                <FaWindowClose onClick={(e) => this.handleDelete(e, index)} className="delete" />
               </span>
             </li>
           ))}
