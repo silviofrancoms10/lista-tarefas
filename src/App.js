@@ -6,8 +6,6 @@ export default function App()  {
   return (
     <>
       <Main />
-      <h1> Hello World!</h1>
-      <p>Lorem</p>
     </>
   );
 
